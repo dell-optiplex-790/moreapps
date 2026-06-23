@@ -18,6 +18,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
 \====================================================*/
 
 (function MoreApps() {
+    delete le._files.a.boot['moreapps.js'];
     async function app(blob) {
         if(!(blob instanceof Blob)) {
             return;

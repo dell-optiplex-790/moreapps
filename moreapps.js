@@ -34,6 +34,10 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         } catch(e) {
             return console.error(e);
         }
+        if(!(manifest.categories instanceof Array)) {
+            return;
+        }
+        manifest.categories = manifest.categories.join(';');
         if(!manifest.exec) {
             return;
         }

@@ -7,7 +7,9 @@
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://dell-optiplex-790.github.io/moreapps/moreapps.js', false);
     xhr.send();
-    $store.set('/boot/moreapps.js', xhr.responseText);
-    $store.set('/pkg/README.txt', 'Drop in any package ZIPs here...');
-    location.reload();
+    $file.save('/a/boot/moreapps.js', xhr.responseText, function() {
+        $file.save('/a/pkg/README.txt', 'Drop in any package ZIPs here...', function() {
+            location.reload();
+        });
+    });
 })();
